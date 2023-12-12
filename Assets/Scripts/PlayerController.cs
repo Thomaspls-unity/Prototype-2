@@ -7,10 +7,11 @@ public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;
     public float verticalInput;
-    public Vector3 moveDirection;
     public float speed = 10.0f;
     public float xRange = 15;
     public float zRange = 3;
+    public Vector3 moveDirection;
+    public GameObject projectilePrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
     {
         MovePlayer();
         KeepPlayerInBounds();
+        ThrowProjectile();
     }
 
     private void MovePlayer()
@@ -56,6 +58,13 @@ public class PlayerController : MonoBehaviour
         if (transform.position.z < 0)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+        }
+    }
+    public void ThrowProjectile()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)) //Used to launch carrot with Space
+        {
+            Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         }
     }
 }
