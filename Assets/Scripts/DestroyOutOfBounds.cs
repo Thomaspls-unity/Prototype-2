@@ -5,11 +5,9 @@ using UnityEngine;
 public class DestroyOutOfBounds : MonoBehaviour
 {
     private float topBound = 30;
+    private float sideBound = 31;
     //public Transform[] spawnTransformsLeft; //Used for Challenge but not sure how to implement
     //public Transform[] spawnTransformsRight;
-    //public GameObject animalCow;
-    //public GameObject animalMoose;
-    //public GameObject animalFox;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +31,12 @@ public class DestroyOutOfBounds : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (transform.position.x < -sideBound)
+        {
+            Destroy (gameObject);
+        }
+
     }
     //public int GetRandomNumberLeft() //Used for Challenge but not sure how to implement
     //{
