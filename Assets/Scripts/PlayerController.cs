@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float zRange = 3;
     public Vector3 moveDirection;
     public GameObject projectilePrefab;
+    public Transform spawnPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,7 +65,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)) //Used to launch carrot with Space
         {
-            Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);
         }
     }
 }

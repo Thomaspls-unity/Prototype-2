@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollisionDetection : MonoBehaviour
 {
-    public int health = 50;
+    public int hunger = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,12 +27,12 @@ public class CollisionDetection : MonoBehaviour
 
     public void FeedAnimal(int feedAmount)
     {
-        if (health > 0)
+        if (hunger > 0)
         {
-            health -= feedAmount;
+            hunger -= feedAmount;
         }
 
-        if (health <= 0)
+        if (hunger <= 0)
         {
             HideAnimal();
         }
@@ -41,5 +41,6 @@ public class CollisionDetection : MonoBehaviour
     public void HideAnimal()
     {
         Destroy(gameObject);
+
     }
 }

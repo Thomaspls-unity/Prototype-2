@@ -17,4 +17,12 @@ public class FoodItem : MonoBehaviour
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Animal")) //this bit is looking for the tag
+        {
+            Destroy(gameObject);
+        }
+    }
 }

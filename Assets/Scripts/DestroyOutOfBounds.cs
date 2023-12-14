@@ -30,11 +30,13 @@ public class DestroyOutOfBounds : MonoBehaviour
         if (transform.position.z < -topBound)
         {
             Destroy(gameObject);
+            Debug.Log("An animal got past you! They're now wandering the farm, hungry and sad :c");
         }
 
         if (transform.position.x < -sideBound)
         {
             Destroy (gameObject);
+            Debug.Log("An animal got past you! They're now wandering the farm, hungry and sad :c");
         }
 
     }
