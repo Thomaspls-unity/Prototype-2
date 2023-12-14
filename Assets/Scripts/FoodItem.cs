@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collision : MonoBehaviour
+public class FoodItem : MonoBehaviour
 {
+    public int feedAmount = 5;
+    public float speed = 14.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,6 @@ public class Collision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
 }
